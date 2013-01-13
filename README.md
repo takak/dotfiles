@@ -10,6 +10,7 @@
     cd dotfiles
     git submodule update --init
     sh symlink.sh
+    ln -s ~/dotfiles/vimfiles ~/.vim
 
 ## vim
     :BundleInstall
