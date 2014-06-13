@@ -3,6 +3,7 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH="/usr/local/bin:$PATH"
 export NODE_PATH=$HOME/.npm/lib:$PATH
 export PATH=$HOME/.npm/bin:$PATH
+export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 export SCREENDIR=$HOME/.screen
 alias java='java -Dfile.encoding=UTF-8'
@@ -175,3 +176,5 @@ preexec () {
   COMMAND="${1}"
   COMMAND_TIME=`date +%s`
   }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
