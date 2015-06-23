@@ -155,7 +155,6 @@ function up()
 }
 fpath=(~/.functions ${fpath})
 
-
 stty stop undef
 
 local COMMAND=""
@@ -166,7 +165,7 @@ precmd() {
     d=`expr $d - $COMMAND_TIME`
     if [ "$d" -ge "30" ] ; then
       COMMAND="$COMMAND "
-      growlnotify -t "${${(s: :)COMMAND}[1]}" -m "$COMMAND"
+      echo "display notification \"$COMMAND\" with title \"${${(s: :)COMMAND}[1]}\"" | osascript
     fi
   fi
   COMMAND="0"
