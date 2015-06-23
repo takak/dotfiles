@@ -1,0 +1,16 @@
+"*":
+  "exception-reporting":
+    userId: "acb0559d-e6f8-261d-8e01-54ea9f9d9ad2"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "atom-xoria"
+    ]
+  editor:
+    invisibles: {}
+    preferredLineLength: 1
+  "autocomplete-ruby": {}
+  "linter-php": {}
+  "one-dark-ui": {}

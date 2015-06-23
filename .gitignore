@@ -1,1 +1,8 @@
 /vimfiles/bundle/
+/.atom/.apm/
+/.atom/.node-gyp/
+/.atom/compile-cache/
+/.atom/npm-debug.log
+/.atom/packages/
+/.atom/projects.cson
+/.atom/storage/
