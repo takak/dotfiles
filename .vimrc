@@ -15,7 +15,6 @@ Bundle 'quickrun'
 Bundle 'vim-coffee-script'
 Bundle 'unite.vim'
 Bundle 'h1mesuke/unite-outline'
-Bundle 'Shougo/vimfiler'
 
 set t_Co=256 " 256色表示
 colorscheme xoria256
@@ -104,35 +103,6 @@ nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -vertical -winwidth=30 -buffer-na
 nnoremap <silent> <C-u><C-o> :<C-u>Unite -winheight=10 -direction=aboveleft -no-quit outline<CR>
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 " unite --------------------------------------------------------------
-
-" vimfiler --------------------------------------------------------------
-" [ref] http://hrsh7th.hatenablog.com/entry/20120229/1330525683
-nnoremap <silent> <C-v><C-f> :VimFiler -buffer-name=explorer -split -winwidth=40 -toggle -no-quit<CR>
-
-autocmd! FileType vimfiler call g:my_vimfiler_settings()
-function! g:my_vimfiler_settings()
-  " enterでfileを開く
-  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
-  " sでfileを横分割で開く
-  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
-  " vでfileを縦分割で開く
-  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
-endfunction
-
-" 多分全部同じ場所で開くようにするやつだと思う
-let my_action = { 'is_selectable' : 1 }
-function! my_action.func(candidates)
-  wincmd p
-  exec 'split '. a:candidates[0].action__path
-endfunction
-call unite#custom_action('file', 'my_split', my_action)
-
-let my_action = { 'is_selectable' : 1 }                     
-function! my_action.func(candidates)
-  wincmd p
-  exec 'vsplit '. a:candidates[0].action__path
-endfunction
-" vimfiler --------------------------------------------------------------
 
 " NeoCompleCache.vim
 let g:neocomplcache_enable_at_startup = 1
