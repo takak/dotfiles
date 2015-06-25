@@ -1,20 +1,27 @@
 export LANG=ja_JP.UTF-8
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH="/usr/local/bin:$PATH"
 export NODE_PATH=$HOME/.npm/lib:$PATH
 export PATH=$HOME/.npm/bin:$PATH
 export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 export SCREENDIR=$HOME/.screen
+
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=utf-8'
 
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+############################################################
+# rbenv & phpenv
+############################################################
+
+export PATH=$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH
+eval "$(rbenv init -)"
+eval "$(phpenv init -)"
 
 ############################################################
 # aliases
 ############################################################
+
+alias vi='vim'
 alias ls='ls -FG'
 alias gh='history 0 | grep --color '
 alias l='less'

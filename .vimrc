@@ -6,7 +6,7 @@ filetype off
 set rtp+=~/.vim/vundle.git/ " github管理仕様 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
-" 使うプラグイン
+" vundleで使うプラグイン
 Bundle 'haml.zip'
 Bundle 'tpope/vim-rails'
 Bundle 'neocomplcache'
@@ -16,22 +16,28 @@ Bundle 'vim-coffee-script'
 Bundle 'unite.vim'
 Bundle 'h1mesuke/unite-outline'
 
-set t_Co=256 " 256色表示
+" 256色表示とスキーマの設定
+set t_Co=256
 colorscheme xoria256
-syntax on " ないと困る
 
+" statusline
+set laststatus=2
+set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
+
+" syntax highlightを有効化
+syntax on
+
+" 全角スペース滅ぶべし
+highlight ZenkakuSpace cterm=underline ctermbg=white ctermfg=blue
+match ZenkakuSpace /　/
+
+" 細々とした設定
 set visualbell t_vb=    " beep音を消す / set novisualbellはいらない気がする
 set wildmode=list,full  " ファイルを開くときのコマンドラインモードのファイル補完
 set number              " 行番号表示
 set showcmd             " 入力中のコマンドをステータスに表示する
 set showmatch           " 閉じ括弧が入力されたとき、対応する開き括弧に少しの間ジャンプ
-
-" backspaceで削除できるものを強化
-" indent  : 行頭の空白
-" eol     : 改行
-" start   : 挿入モード開始位置より手前の文字
-set backspace=indent,eol,start
-
+set backspace=indent,eol,start " backspaceで削除できるものを強化 indent : 行頭の空白, eol : 改行 start : 挿入モード開始位置より手前の文字
 set textwidth=0   " テキストの最大幅。長くなるとこの幅を超えないように空白の後で改行される。/ 0=無効
 set nobackup      " Don't keep a backup file
 set viminfo=      " dont' read/write a .viminfo file / set viminfo='500,<10000,s1000,\"500 " read/write a .viminfo file, don't store more than
@@ -39,6 +45,7 @@ set history=1000  " keep command line history
 
 " US配列ェ・・・
 nnoremap ; :
+
 " map
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
@@ -48,14 +55,12 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <silent> <expr> <C-e> (pumvisible() ? "\<C-e>" : "\<End>")
 inoremap <C-d> <Del>
+
 "buffer
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>f :edit .<CR>
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
-
-highlight ZenkakuSpace cterm=underline ctermbg=white ctermfg=blue
-match ZenkakuSpace /　/
 
 " タブの移動をmap
 map L gt
@@ -79,7 +84,8 @@ set ignorecase  " 検索文字列が小文字の場合は大文字小文字を�
 set smartcase   " 検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan    " 検索時に最後まで行ったら最初に戻る
 set hlsearch    " 検索で色をつける
-" gh で hilight を消す
+
+" gh で highlight を消す
 nnoremap <silent> gh :let @/=''<CR>
 
 " svn/git での文字エンコーディング設定
