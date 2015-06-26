@@ -9,10 +9,14 @@ call vundle#rc()
 " vundleで使うプラグイン
 Bundle 'haml.zip'
 Bundle 'tpope/vim-rails'
-Bundle 'neocomplcache'
-Bundle 'xoria256.vim'
-Bundle 'quickrun'
+Bundle 'evidens/vim-twig'
 Bundle 'vim-coffee-script'
+
+Bundle 'xoria256.vim'
+Bundle 'neocomplcache'
+
+Bundle 'quickrun'
+
 Bundle 'unite.vim'
 Bundle 'h1mesuke/unite-outline'
 
