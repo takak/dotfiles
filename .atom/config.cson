@@ -10,7 +10,7 @@
     ]
   editor:
     invisibles: {}
-    preferredLineLength: 1
+    preferredLineLength: 10000
   "autocomplete-ruby": {}
   "linter-php": {}
   "one-dark-ui": {}
