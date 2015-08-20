@@ -32,7 +32,7 @@ alias where='command -v'
 alias du='du -h'
 alias df='df -h'
 alias vz='vim ~/.zshrc && . ~/.zshrc'
-alias screen="$HOME/local/bin/screen"
+alias screen='/usr/local/bin/screen'
 alias be='bundle exec'
 
 autoload zmv

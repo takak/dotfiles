@@ -20,6 +20,9 @@ Bundle 'quickrun'
 Bundle 'unite.vim'
 Bundle 'h1mesuke/unite-outline'
 
+Bundle 'AtsushiM/search-parent.vim'
+Bundle 'AtsushiM/sass-compile.vim'
+
 " 256色表示とスキーマの設定
 set t_Co=256
 colorscheme xoria256
@@ -150,3 +153,14 @@ augroup UjihisaRSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+
+" auto scss -> css
+let g:sass_compile_auto = 1
+let g:sass_compile_cdloop = 0
+" let g:sass_compile_cssdir = ['rocobee']
+" let g:sass_compile_cssdir = ['pictcake-faq']
+let g:sass_compile_cssdir = ['cake_tokyo']
+let g:sass_compile_file = ['scss', 'sass']
+let g:sass_compile_beforecmd = ''
+let g:sass_compile_aftercmd = ''
+"}}}
