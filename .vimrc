@@ -157,7 +157,7 @@ augroup END
 " auto scss -> css
 let g:sass_compile_auto = 1
 let g:sass_compile_cdloop = 0
-" let g:sass_compile_cssdir = ['rocobee']
+" let g:sass_compile_cssdir = ['rocobee-sp']
 " let g:sass_compile_cssdir = ['pictcake-faq']
 let g:sass_compile_cssdir = ['cake_tokyo']
 let g:sass_compile_file = ['scss', 'sass']

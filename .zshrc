@@ -1,21 +1,21 @@
 export LANG=ja_JP.UTF-8
 export PATH="/usr/local/bin:$PATH"
-export NODE_PATH=$HOME/.npm/lib:$PATH
-export PATH=$HOME/.npm/bin:$PATH
-export PATH=/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/:$PATH
-export MANPATH=$HOME/.npm/man:$MANPATH
 export SCREENDIR=$HOME/.screen
-
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=utf-8'
 
 ############################################################
-# rbenv & phpenv
+# node
 ############################################################
+export NODE_PATH=$HOME/.npm/lib:$PATH
+export PATH=$HOME/.npm/bin:$PATH
+export MANPATH=$HOME/.npm/man:$MANPATH
 
-export PATH=$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH
-eval "$(rbenv init -)"
-eval "$(phpenv init -)"
+############################################################
+# anyenv(for rbenv, phpenv)
+############################################################
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 
 ############################################################
 # aliases
