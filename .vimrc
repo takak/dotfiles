@@ -25,8 +25,6 @@ Bundle 'haml.zip'
 Bundle 'tpope/vim-rails'
 Bundle 'evidens/vim-twig'
 Bundle 'vim-coffee-script'
-" sassの自動compile
-Bundle 'AtsushiM/sass-compile.vim'
 " statuslineの拡張
 Bundle 'itchyny/lightline.vim'
 " 末尾の半角と全角スペースの可視化
@@ -77,19 +75,6 @@ set wrapscan    " 検索時に最後まで行ったら最初に戻る
 set hlsearch    " 検索結果のハイライト
 " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
-
-"----------------------------------------------------------
-" sass-compile.vimを用いたsassの自動compile設定
-"----------------------------------------------------------
-let g:sass_compile_auto = 0
-let g:sass_compile_cdloop = 0
-" let g:sass_compile_cssdir = ['rocobee-sp']
-" let g:sass_compile_cssdir = ['pictcake-faq']
-" let g:sass_compile_cssdir = ['cake_tokyo']
-let g:sass_compile_cssdir = ['magazine']
-let g:sass_compile_file = ['scss', 'sass']
-let g:sass_compile_beforecmd = ''
-let g:sass_compile_aftercmd = ''
 
 "----------------------------------------------------------
 " コピペ時の自動インデントを無効
