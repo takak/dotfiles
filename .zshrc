@@ -12,10 +12,10 @@ export PATH=$HOME/.npm/bin:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
 ############################################################
-# anyenv(for rbenv, phpenv)
+# rbenv
 ############################################################
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 ############################################################
 # aliases

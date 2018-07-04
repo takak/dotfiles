@@ -25,6 +25,7 @@ Bundle 'haml.zip'
 Bundle 'tpope/vim-rails'
 Bundle 'evidens/vim-twig'
 Bundle 'vim-coffee-script'
+Bundle 'hashivim/vim-terraform'
 " statuslineの拡張
 Bundle 'itchyny/lightline.vim'
 " 末尾の半角と全角スペースの可視化
