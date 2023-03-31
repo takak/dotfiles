@@ -1,8 +1,19 @@
 export LANG=ja_JP.UTF-8
-export PATH="/usr/local/bin:$PATH"
 export SCREENDIR=$HOME/.screen
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=utf-8'
+
+############################################################
+# Github Access (tech@atta.ai)
+############################################################
+ssh-add ~/.ssh/github-tech@atta.ai
+
+############################################################
+# Homebrew
+############################################################
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/usr/local/bin:$PATH"
 
 ############################################################
 # node
@@ -14,8 +25,8 @@ export MANPATH=$HOME/.npm/man:$MANPATH
 ############################################################
 # rbenv
 ############################################################
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 ############################################################
 # aliases
@@ -32,7 +43,8 @@ alias where='command -v'
 alias du='du -h'
 alias df='df -h'
 alias vz='vim ~/.zshrc && . ~/.zshrc'
-alias screen='/usr/local/bin/screen'
+# alias screen='/usr/local/bin/screen'
+alias screen='/opt/homebrew/bin/screen' # Apple Silicon
 alias be='bundle exec'
 
 autoload zmv
@@ -140,6 +152,7 @@ setopt NO_BEEP
 autoload -U colors
 colors
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # cd ~/
@@ -182,5 +195,3 @@ preexec () {
   COMMAND="${1}"
   COMMAND_TIME=`date +%s`
   }
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
