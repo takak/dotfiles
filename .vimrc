@@ -21,19 +21,20 @@ call vundle#rc()
 "" カラースキーム
 Bundle 'xoria256.vim'
 "" syntax
-Bundle 'haml.zip'
+Bundle 'peitalin/vim-jsx-typescript'
 Bundle 'tpope/vim-rails'
-Bundle 'evidens/vim-twig'
-Bundle 'vim-coffee-script'
 Bundle 'hashivim/vim-terraform'
 " statuslineの拡張
 Bundle 'itchyny/lightline.vim'
 " 末尾の半角と全角スペースの可視化
 Bundle 'bronson/vim-trailing-whitespace'
-
+" 入力補完
 Bundle 'neocomplcache'
 
-Bundle 'AtsushiM/search-parent.vim'
+" ----------------------------------------------
+" syntax highlightを適用するために特定の拡張子とファイルタイプをマッピング
+" ----------------------------------------------
+autocmd BufNewFile,BufRead *.txt :set filetype=markdown
 
 " ----------------------------------------------
 " カラースキーム
@@ -99,6 +100,7 @@ endif
 "----------------------------------------------------------
 " その他細々とした設定
 "----------------------------------------------------------
+set mouse=a             " マウス操作を有効にする
 set visualbell t_vb=    " beep音を消す / set novisualbellはいらない気がする
 set wildmode=list,full  " ファイルを開くときのコマンドラインモードのファイル補完
 set number              " 行番号表示
@@ -110,9 +112,6 @@ set nobackup      " Don't keep a backup file
 set viminfo=      " dont' read/write a .viminfo file / set viminfo='500,<10000,s1000,\"500 " read/write a .viminfo file, don't store more than
 set modelines=0   " modeline(ファイル毎のvimのオプション指定)を無効化
 set title         " 端末のタイトルを変更する(タイトルバーとか)
-
-" markdownのsyntax highlightを適用するためにtxtをmarkdown形式で読み込む
-autocmd BufNewFile,BufRead *.txt :set filetype=markdown
 
 " US配列の場合の入力しやすさ
 nnoremap ; :
