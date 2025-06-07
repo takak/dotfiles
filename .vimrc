@@ -14,7 +14,8 @@ set ambiwidth=double " □や○文字が崩れる問題を解決
 " vundle
 " ----------------------------------------------
 filetype off
-set rtp+=~/.vim/vundle.git/ " github管理仕様 set rtp+=~/.vim/vundle.git/
+"set rtp+=~/.vim/vundle.git/ " github管理仕様 set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " プラグイン
@@ -100,7 +101,7 @@ endif
 "----------------------------------------------------------
 " その他細々とした設定
 "----------------------------------------------------------
-set mouse=a             " マウス操作を有効にする
+"set mouse=a             " マウス操作を有効にする
 set visualbell t_vb=    " beep音を消す / set novisualbellはいらない気がする
 set wildmode=list,full  " ファイルを開くときのコマンドラインモードのファイル補完
 set number              " 行番号表示
