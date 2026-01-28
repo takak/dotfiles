@@ -15,6 +15,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/opt/homebrew/bin:$PATH"
 # export PATH="/usr/local/bin:$PATH"
 
+############################################################
+# Claude CodeのAPIリクエストをCloudflareのAI Gatewayを通して可視化
+############################################################
+export PATH=$HOME/.local/bin:$PATH
+#export ANTHROPIC_BASE_URL=https://gateway.ai.cloudflare.com/v1/081435a6f1a56771c8d7258b46d1670f/claude-code/anthropic
 
 ############################################################
 # 全ての~~envを過去にする
@@ -29,34 +34,17 @@ export PATH=$HOME/.npm/bin:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
 ############################################################
-# rbenv
-############################################################
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-
-############################################################
-# pyenv
-############################################################
-# eval "$(pyenv init --path)"
-
-############################################################
 # aliases
 ############################################################
 
 alias vi='vim'
 alias ls='ls -FG'
-alias gh='history 0 | grep --color '
-alias l='less'
-alias g='grep --color'
 alias -g G='| grep --color'
 alias -g L='| less'
 alias where='command -v'
 alias du='du -h'
 alias df='df -h'
-alias vz='vim ~/.zshrc && . ~/.zshrc'
-# alias screen='/usr/local/bin/screen'
 alias screen='/opt/homebrew/bin/screen' # Apple Silicon
-alias be='bundle exec'
 
 autoload zmv
 alias zmv='noglob zmv'
@@ -163,14 +151,11 @@ setopt NO_BEEP
 autoload -U colors
 colors
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
 # cd ~/
 function h() {
     cd
     if [ $# = 1 ]; then
-        cd 
+        cd
     fi
 }
 
