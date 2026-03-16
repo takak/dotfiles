@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+  echo "Error: セッション名を指定してください" >&2
+  echo "Usage: $(basename "$0") <session-name>" >&2
+  exit 1
+fi
+
+session="$1"
+layout_name="${session##*-}"
+layout="$HOME/.config/zellij/layouts/${layout_name}.kdl"
+
+if [[ ! -f "$layout" ]]; then
+  echo "Error: レイアウトファイルが見つかりません: $layout" >&2
+  exit 1
+fi
+
+if zellij list-sessions --no-formatting 2>/dev/null | grep -q "^${session}"; then
+  zellij attach "$session"
+else
+  zellij --session "$session" --new-session-with-layout "$layout"
+fi

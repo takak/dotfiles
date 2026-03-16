@@ -1,5 +1,4 @@
 export LANG=ja_JP.UTF-8
-export SCREENDIR=$HOME/.screen
 alias java='java -Dfile.encoding=UTF-8'
 alias javac='javac -J-Dfile.encoding=utf-8'
 
@@ -16,10 +15,26 @@ export PATH="/opt/homebrew/bin:$PATH"
 # export PATH="/usr/local/bin:$PATH"
 
 ############################################################
+# bun
+############################################################
+# bun completions
+[ -s "/Users/t_kanehira/.bun/_bun" ] && source "/Users/t_kanehira/.bun/_bun"
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+############################################################
+# git worktree
+############################################################
+alias worktree="./wt.sh"
+
+############################################################
 # Claude CodeのAPIリクエストをCloudflareのAI Gatewayを通して可視化
 ############################################################
 export PATH=$HOME/.local/bin:$PATH
 #export ANTHROPIC_BASE_URL=https://gateway.ai.cloudflare.com/v1/081435a6f1a56771c8d7258b46d1670f/claude-code/anthropic
+
+alias eternal="sh ~/workspaces/eternal/eternal.sh"
 
 ############################################################
 # 全ての~~envを過去にする
@@ -58,7 +73,7 @@ alias zmv='noglob zmv'
 #prompt adam2
 PROMPT="%n%% "
 RPROMPT="[%~]"
-SPROMPT="correct: %R -> %r ? " 
+SPROMPT="correct: %R -> %r ? "
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
@@ -85,7 +100,7 @@ function rprompt-git-current-branch {
         else
                  color=%F{red}
          fi
-              
+
         echo "$color$name$action%f%b"
 }
 
@@ -191,3 +206,9 @@ preexec () {
   COMMAND="${1}"
   COMMAND_TIME=`date +%s`
   }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/t_kanehira/workspaces/Obsidian/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/t_kanehira/workspaces/Obsidian/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/t_kanehira/workspaces/Obsidian/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/t_kanehira/workspaces/Obsidian/google-cloud-sdk/completion.zsh.inc'; fi
