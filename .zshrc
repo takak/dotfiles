@@ -59,7 +59,6 @@ alias -g L='| less'
 alias where='command -v'
 alias du='du -h'
 alias df='df -h'
-alias screen='/opt/homebrew/bin/screen' # Apple Silicon
 
 autoload zmv
 alias zmv='noglob zmv'
