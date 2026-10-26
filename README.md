@@ -22,4 +22,5 @@
 
 ## zellij
     mkdir -p ~/.config/zellij
+    mv ~/.config/zellij/config.kdl ~/.config/zellij/config.kdl.bak  # zellij起動済みだとconfig.kdlが自動生成されていてlnがFile existsになるので退避する(無ければ不要)
     ln -s ~/dotfiles/zellij/config.kdl ~/.config/zellij/config.kdl
