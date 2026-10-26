@@ -12,6 +12,7 @@
 
 ## vim
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone --branch release --depth 1 https://github.com/neoclide/coc.nvim.git ~/.vim/bundle/coc.nvim  # coc.nvimはビルド済みのreleaseブランチを使う
     vim  # 起動後に以下を実行
     :BundleInstall
 

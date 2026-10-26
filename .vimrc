@@ -30,7 +30,9 @@ Bundle 'itchyny/lightline.vim'
 " 末尾の半角と全角スペースの可視化
 Bundle 'bronson/vim-trailing-whitespace'
 " 入力補完
-Bundle 'neoclide/coc.nvim'
+" Vundleはブランチ指定ができず、masterにはビルド済みのbuild/index.jsが無いため
+" releaseブランチを手動でcloneし、Vundleの更新対象から外す(READMEを参照)
+Bundle 'neoclide/coc.nvim', {'pinned': 1}
 
 " ----------------------------------------------
 " syntax highlightを適用するために特定の拡張子とファイルタイプをマッピング
